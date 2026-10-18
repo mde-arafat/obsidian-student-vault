@@ -1,0 +1,57 @@
+filters:
+  and:
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Name
+  note.status:
+    displayName: Status
+  note.due:
+    displayName: Due
+  note.score:
+    displayName: Score
+  note.kind:
+    displayName: Kind
+views:
+  - type: table
+    name: Weeks
+    filters:
+      and:
+        - type == "week"
+        - course == this
+    order:
+      - file.name
+      - status
+      - due
+      - score
+    sort:
+      - property: week
+        direction: ASC
+    summaries:
+      score: Average
+  - type: table
+    name: Assessments
+    filters:
+      and:
+        - type == "assessment"
+        - course == this
+    order:
+      - file.name
+      - kind
+      - due
+      - status
+      - score
+    sort:
+      - property: due
+        direction: ASC
+  - type: list
+    name: Concepts
+    filters:
+      and:
+        - type == "concept"
+        - list(courses).contains(this)
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: ASC

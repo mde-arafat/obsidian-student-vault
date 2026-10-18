@@ -1,0 +1,66 @@
+filters:
+  and:
+    - type == "course"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Course
+  note.code:
+    displayName: Code
+  note.level:
+    displayName: Level
+  note.term:
+    displayName: Term
+  note.status:
+    displayName: Status
+  note.credits:
+    displayName: Credits
+  note.score:
+    displayName: Score
+  note.grade:
+    displayName: Grade
+views:
+  - type: cards
+    name: Active
+    filters:
+      and:
+        - status == "active"
+    order:
+      - file.name
+      - code
+      - term
+    sort:
+      - property: code
+        direction: ASC
+    image: note.cover
+    imageAspectRatio: 0.25
+    cardSize: 220
+  - type: table
+    name: By level
+    groupBy:
+      property: level
+      direction: DESC
+    order:
+      - file.name
+      - code
+      - status
+      - credits
+      - term
+    sort:
+      - property: code
+        direction: ASC
+    summaries:
+      credits: Sum
+  - type: table
+    name: Passed
+    filters:
+      and:
+        - status == "passed"
+    order:
+      - file.name
+      - code
+      - term
+      - score
+      - grade
+    summaries:
+      score: Average

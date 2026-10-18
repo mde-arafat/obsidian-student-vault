@@ -1,0 +1,53 @@
+filters:
+  and:
+    - type == "project"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Project
+  note.status:
+    displayName: Status
+  note.skills:
+    displayName: Skills
+  note.start:
+    displayName: Start
+  note.end:
+    displayName: End
+  note.url:
+    displayName: Link
+views:
+  - type: kanban
+    name: Board
+    groupBy:
+      property: note.status
+      direction: ASC
+    groupOrder:
+      - todo
+      - doing
+      - done
+    order:
+      - file.name
+      - skills
+  - type: cards
+    name: Active
+    filters:
+      and:
+        - status == "doing"
+    order:
+      - file.name
+      - skills
+    image: note.cover
+    imageAspectRatio: 0.25
+    cardSize: 220
+  - type: table
+    name: All
+    order:
+      - file.name
+      - status
+      - start
+      - end
+      - skills
+      - url
+    sort:
+      - property: start
+        direction: DESC

@@ -1,0 +1,29 @@
+filters:
+  and:
+    - type == "source"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Source
+  note.kind:
+    displayName: Kind
+  note.author:
+    displayName: Author
+  note.courses:
+    displayName: Courses
+  note.url:
+    displayName: Link
+views:
+  - type: table
+    name: All
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - author
+      - courses
+      - url
+    sort:
+      - property: file.name
+        direction: ASC

@@ -1,0 +1,24 @@
+filters:
+  and:
+    - type == "review"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Week
+views:
+  - type: list
+    name: Latest
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: DESC
+    limit: 1
+  - type: table
+    name: All
+    order:
+      - file.name
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: DESC

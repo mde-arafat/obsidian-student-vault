@@ -1,0 +1,70 @@
+filters:
+  and:
+    - "!due.isEmpty()"
+    - status != "done"
+    - status != "closed"
+    - '!file.inFolder("Templates")'
+formulas:
+  when: due.relative()
+properties:
+  file.name:
+    displayName: What
+  formula.when:
+    displayName: When
+  note.due:
+    displayName: Due
+  note.course:
+    displayName: Course
+  note.type:
+    displayName: Type
+  note.status:
+    displayName: Status
+views:
+  - type: table
+    name: Up next
+    filters:
+      and:
+        - due <= today() + "14d"
+    order:
+      - file.name
+      - formula.when
+      - due
+      - course
+      - status
+    sort:
+      - property: due
+        direction: DESC
+      - property: formula.when
+        direction: DESC
+    columnSize:
+      note.course: 140
+  - type: table
+    name: Overdue
+    filters:
+      and:
+        - due < today()
+    order:
+      - file.name
+      - formula.when
+      - due
+      - course
+      - status
+    sort:
+      - property: due
+        direction: ASC
+    columnSize:
+      note.course: 140
+  - type: table
+    name: All
+    order:
+      - file.name
+      - formula.when
+      - due
+      - course
+      - type
+      - status
+    sort:
+      - property: due
+        direction: ASC
+    columnSize:
+      note.course: 140

@@ -1,0 +1,35 @@
+# Embedded in each term note: `this` is the term note that embeds it.
+filters:
+  and:
+    - type == "course"
+    - term == this
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Course
+  note.code:
+    displayName: Code
+  note.status:
+    displayName: Status
+  note.credits:
+    displayName: Credits
+  note.score:
+    displayName: Score
+  note.grade:
+    displayName: Grade
+views:
+  - type: table
+    name: Courses
+    order:
+      - file.name
+      - code
+      - status
+      - credits
+      - score
+      - grade
+    sort:
+      - property: code
+        direction: ASC
+    summaries:
+      note.credits: Sum
+      note.score: Average

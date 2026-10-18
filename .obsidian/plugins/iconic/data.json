@@ -1,0 +1,75 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": false,
+  "showMenuActions": true,
+  "showSuggestionIcons": false,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 100,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 2,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "AGENTS.md": {
+      "icon": "lucide-bot"
+    },
+    "Attachments": {
+      "icon": "lucide-paperclip"
+    },
+    "Bases": {
+      "icon": "lucide-database"
+    },
+    "CLAUDE.md": {
+      "icon": "lucide-bot"
+    },
+    "Career": {
+      "icon": "lucide-briefcase"
+    },
+    "Concepts": {
+      "icon": "lucide-lightbulb"
+    },
+    "Courses": {
+      "icon": "lucide-graduation-cap"
+    },
+    "Home.md": {
+      "icon": "lucide-house"
+    },
+    "Projects": {
+      "icon": "lucide-rocket"
+    },
+    "Reviews": {
+      "icon": "lucide-calendar-check"
+    },
+    "Sources": {
+      "icon": "lucide-book-open"
+    },
+    "Templates": {
+      "icon": "lucide-layout-template"
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": []
+}

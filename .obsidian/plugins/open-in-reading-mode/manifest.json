@@ -1,0 +1,9 @@
+{
+  "id": "open-in-reading-mode",
+  "name": "Vault essentials",
+  "version": "1.6.0",
+  "minAppVersion": "1.4.0",
+  "description": "Reading mode by default (title locked), one-click bookmark button, Chrome-style swipe back/forward, and a calm New tab page with greeting and next deadline.",
+  "author": "IITM vault",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,246 @@
+/* Small style tweaks on top of the Soft Paper theme. */
+
+/* Headings use the same font as note text (New York).
+   Soft Paper asks for "Source Serif Pro", which isn't installed. */
+body {
+  --h1-font: var(--font-text);
+  --h2-font: var(--font-text);
+  --h3-font: var(--font-text);
+  --h4-font: var(--font-text);
+  --h5-font: var(--font-text);
+  --h6-font: var(--font-text);
+  --anp-header-font: var(--font-text);
+}
+
+/* Breathing space between a page's title and its content (Obsidian default: 0.5em). */
+body {
+  --inline-title-margin-bottom: 1.75em;
+}
+
+/* ===== New tab page: picture, greeting, date and next deadline ===== */
+/* The pictures come from the "Vault essentials" plugin (or Attachments/new-tab.jpg). */
+.theme-light .workspace-leaf-content[data-type="empty"] .view-content {
+  background: var(--vault-newtab-light) center bottom / cover no-repeat;
+}
+.theme-dark .workspace-leaf-content[data-type="empty"] .view-content {
+  background: var(--vault-newtab-dark) center bottom / cover no-repeat;
+}
+.workspace-leaf-content[data-type="empty"] .empty-state-container {
+  max-height: none;
+}
+/* 3D glass + soft neumorphic look. Colours per mode live in these variables. */
+.theme-light .workspace-leaf-content[data-type="empty"] {
+  --glass-bg: rgba(255, 255, 255, 0.30);
+  --glass-border: rgba(255, 255, 255, 0.60);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  --glass-shadow: 0 24px 60px rgba(40, 45, 70, 0.18), 0 2px 8px rgba(40, 45, 70, 0.08);
+  --pill-bg: rgba(255, 255, 255, 0.45);
+  --pill-raised: 5px 5px 12px rgba(60, 60, 80, 0.16), -4px -4px 10px rgba(255, 255, 255, 0.70);
+  --pill-pressed: inset 4px 4px 9px rgba(60, 60, 80, 0.18), inset -3px -3px 8px rgba(255, 255, 255, 0.70);
+}
+.theme-dark .workspace-leaf-content[data-type="empty"] {
+  --glass-bg: rgba(38, 42, 58, 0.40);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+  --pill-bg: rgba(52, 57, 78, 0.55);
+  --pill-raised: 5px 5px 14px rgba(0, 0, 0, 0.45), -3px -3px 9px rgba(255, 255, 255, 0.05);
+  --pill-pressed: inset 4px 4px 10px rgba(0, 0, 0, 0.50), inset -2px -2px 7px rgba(255, 255, 255, 0.06);
+}
+
+/* Greeting and date sit straight on the picture (no card), so the sun/moon stays visible. */
+.vault-newtab-hero {
+  margin-bottom: 8px;
+}
+.vault-newtab-greeting {
+  font-family: var(--font-text);
+  font-size: 2.6em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-normal);
+}
+.vault-newtab-date {
+  margin-top: 4px;
+  font-size: 1.1em;
+  color: var(--text-muted);
+}
+
+/* Raised neumorphic pill for the next deadline: lifts on hover, presses in on click. */
+.vault-newtab-next {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--pill-bg);
+  box-shadow: var(--pill-raised);
+  color: var(--text-normal);
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.vault-newtab-next:not(.is-empty):hover {
+  transform: translateY(-2px);
+}
+.vault-newtab-next:not(.is-empty):active {
+  transform: translateY(0);
+  box-shadow: var(--pill-pressed);
+}
+.vault-newtab-next.is-empty {
+  cursor: default;
+  color: var(--text-muted);
+}
+.vault-newtab-label {
+  font-weight: 600;
+  color: var(--text-accent);
+}
+.vault-newtab-title {
+  font-weight: 600;
+}
+.vault-newtab-when {
+  color: var(--text-muted);
+}
+.vault-newtab-next.is-overdue .vault-newtab-label,
+.vault-newtab-next.is-overdue .vault-newtab-when {
+  color: var(--color-red);
+}
+
+/* Buttons: a compact centred row of the same raised glass pills. */
+.workspace-leaf-content[data-type="empty"] .empty-state-action-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 620px;
+  margin-top: 28px;
+}
+.workspace-leaf-content[data-type="empty"] .empty-state-action-list > .text-icon-button.mod-pill {
+  width: auto;
+  padding-inline: 18px;
+  border: 1px solid var(--glass-border);
+  background: var(--pill-bg);
+  box-shadow: var(--pill-raised);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.workspace-leaf-content[data-type="empty"] .empty-state-action-list > .text-icon-button.mod-pill:hover {
+  transform: translateY(-2px);
+}
+.workspace-leaf-content[data-type="empty"] .empty-state-action-list > .text-icon-button.mod-pill:active {
+  transform: translateY(0);
+  box-shadow: var(--pill-pressed);
+}
+
+/* Hide the AI rules files and the GitHub README from the sidebar (they stay on disk; Cmd+O still opens them). */
+.nav-file:has(> .nav-file-title[data-path="README.md"]),
+.nav-file:has(> .nav-file-title[data-path="AGENTS.md"]),
+.nav-file:has(> .nav-file-title[data-path="CLAUDE.md"]) {
+  display: none;
+}
+
+/* Hide the status bar card at the bottom right (backlinks, word and character count). */
+.status-bar {
+  display: none !important;
+}
+
+/* Our one-click bookmark button replaces Obsidian's (which opens a dialog). */
+.workspace-leaf-content .view-action.mod-bookmark {
+  display: none !important;
+}
+
+/* Bookmarked = filled icon, so the state is obvious at a glance. */
+.view-action.vault-bookmark-toggle.mod-bookmarked svg {
+  fill: currentColor;
+}
+
+/* Round the top corner of the left icon strip to match the other cards.
+   Obsidian 1.14 calls it .mod-primary; older versions used .mod-left. */
+.workspace-ribbon.mod-primary,
+.workspace-ribbon.mod-left {
+  border-start-end-radius: var(--anp-card-radius, 8px); /* top */
+  border-end-end-radius: var(--anp-card-radius, 8px);   /* bottom right */
+  margin-bottom: 1px; /* bottom edge on the same line as the note area (measured) */
+}
+
+/* Canvas lines: Soft Paper gives --canvas-color as bare numbers;
+   Obsidian 1.14 needs a full colour. Soft Paper uses the doubled
+   selector .theme-light.theme-light, so "body" is added to win. */
+body.theme-light.theme-light,
+body.theme-dark.theme-dark {
+  --canvas-color: rgb(var(--ctp-overlay0));
+}
+
+/* Remove the thin line Obsidian draws above the icon strip
+   (Soft Paper already does this, but only for the old .mod-left name). */
+.workspace-ribbon.mod-primary:before {
+  border-bottom: none;
+}
+
+/* Dark mode: frame the cards with the teal accent (like light mode's blue frame)
+   instead of near-black, so the rounded corners show and match the title bar. */
+body.theme-dark {
+  --card-background-color: rgba(var(--ctp-accent), 1);
+}
+
+/* No box behind the two sidebar buttons (top-left and top-right); icons sit on the top bar. */
+body .sidebar-toggle-button {
+  background-color: transparent !important;
+}
+
+/* The right button floats on top of the right sidebar's icons. Give it the top-bar colour
+   (looks exactly like no box) so those icons don't show through while the sidebar slides shut. */
+body.mod-macos.is-hidden-frameless .sidebar-toggle-button.mod-secondary,
+body.mod-macos.is-hidden-frameless .mod-sidedock .sidebar-toggle-button.mod-secondary {
+  background-color: var(--titlebar-background) !important;
+}
+
+/* Dark mode: note header icons (back/forward, bookmark, edit, more) were dark on dark.
+   Soft Paper only corrects these for light mode. */
+body.theme-dark .view-header .clickable-icon,
+body.theme-dark .view-header-nav-buttons .clickable-icon {
+  --icon-color: rgb(var(--ctp-subtext1));
+  --icon-color-hover: rgb(var(--ctp-text));
+  --icon-color-focused: rgb(var(--ctp-text));
+  color: rgb(var(--ctp-subtext1));
+}
+
+/* One icon per file: hide the theme's icon only when Iconic shows a custom one.
+   Iconic adds an empty .tree-item-icon to every file, and marks real ones with .iconic-icon.
+   Matches the theme's own selector (.nav-file .nav-file-title[data-path]) so this wins. */
+.nav-file .nav-file-title[data-path]:has(> .tree-item-icon.iconic-icon)::before {
+  display: none;
+}
+
+/* Top-level files continue the folder rainbow instead of plain grey. */
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 2)  { --rainbow-folder-color: var(--sp-rf-red); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 3)  { --rainbow-folder-color: var(--sp-rf-maroon); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 4)  { --rainbow-folder-color: var(--sp-rf-peach); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 5)  { --rainbow-folder-color: var(--sp-rf-yellow); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 6)  { --rainbow-folder-color: var(--sp-rf-green); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 7)  { --rainbow-folder-color: var(--sp-rf-teal); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 8)  { --rainbow-folder-color: var(--sp-rf-sky); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 9)  { --rainbow-folder-color: var(--sp-rf-sapphire); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 10) { --rainbow-folder-color: var(--sp-rf-blue); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 11) { --rainbow-folder-color: var(--sp-rf-lavender); }
+.sp-rainbow-folders .nav-files-container > div > .nav-file:nth-child(11n + 12) { --rainbow-folder-color: var(--sp-rf-mauve); }
+
+body.sp-rainbow-folders.theme-light .nav-files-container > div > .nav-file > .nav-file-title,
+body.sp-rainbow-folders.theme-dark .nav-files-container > div > .nav-file > .nav-file-title {
+  background-color: rgba(var(--rainbow-folder-color), calc(var(--anp-rainbow-folder-bg-opacity) + 0.25));
+  border-radius: 6px;
+}
+/* Same text and icon colour as the folders (the theme's own values). */
+body.sp-rainbow-folders.theme-light .nav-files-container > div > .nav-file > .nav-file-title,
+body.sp-rainbow-folders.theme-light .nav-files-container > div > .nav-file > .nav-file-title .nav-file-title-content,
+body.sp-rainbow-folders.theme-light .nav-files-container > div > .nav-file > .nav-file-title .tree-item-icon {
+  color: rgb(40, 40, 40);
+  --icon-color: rgb(40, 40, 40);
+}
+body.sp-rainbow-folders.theme-dark .nav-files-container > div > .nav-file > .nav-file-title,
+body.sp-rainbow-folders.theme-dark .nav-files-container > div > .nav-file > .nav-file-title .nav-file-title-content,
+body.sp-rainbow-folders.theme-dark .nav-files-container > div > .nav-file > .nav-file-title .tree-item-icon {
+  color: rgb(235, 235, 235);
+  --icon-color: rgb(235, 235, 235);
+}

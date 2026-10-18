@@ -1,0 +1,10 @@
+# Obsidian window and pane state (changes every time you click around)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Deleted notes and plugin backups
+.trash/
+*.backup*
+
+# macOS
+.DS_Store

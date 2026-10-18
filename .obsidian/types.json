@@ -1,0 +1,28 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "type": "text",
+    "course": "text",
+    "courses": "multitext",
+    "code": "text",
+    "level": "text",
+    "term": "text",
+    "status": "text",
+    "credits": "number",
+    "score": "number",
+    "grade": "text",
+    "week": "number",
+    "due": "date",
+    "kind": "text",
+    "start": "date",
+    "end": "date",
+    "skills": "multitext",
+    "org": "text",
+    "author": "multitext",
+    "url": "text",
+    "cover": "text",
+    "sample": "checkbox"
+  }
+}

@@ -1,0 +1,45 @@
+filters:
+  and:
+    - type == "career"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Opportunity
+  note.kind:
+    displayName: Kind
+  note.org:
+    displayName: Organisation
+  note.status:
+    displayName: Status
+  note.due:
+    displayName: Deadline
+  note.url:
+    displayName: Link
+views:
+  - type: kanban
+    name: Pipeline
+    groupBy:
+      property: status
+      direction: ASC
+    groupOrder:
+      - interested
+      - applied
+      - interview
+      - offer
+      - closed
+    order:
+      - file.name
+      - org
+      - due
+  - type: table
+    name: All
+    order:
+      - file.name
+      - kind
+      - org
+      - status
+      - due
+      - url
+    sort:
+      - property: due
+        direction: ASC

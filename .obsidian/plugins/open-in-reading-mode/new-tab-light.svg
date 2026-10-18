@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFE8E0"/>
+      <stop offset="1" stop-color="#E5D8CC"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F0B49C" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#F0B49C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1210" cy="600" r="250" fill="url(#glow)"/>
+  <circle cx="1210" cy="600" r="72" fill="#E7A287" opacity="0.85"/>
+  <!-- Birds sit high in the top-right, clear of the greeting text in any window size. -->
+  <path d="M1290 210 q12 -10 24 0 q12 -10 24 0" fill="none" stroke="#8C8299" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M1360 175 q9 -8 18 0 q9 -8 18 0" fill="none" stroke="#8C8299" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <path d="M0 700 C 220 650 420 665 640 700 C 860 735 1080 650 1300 680 C 1450 700 1540 700 1600 690 L1600 1000 L0 1000 Z" fill="#BCD3D5"/>
+  <path d="M0 780 C 260 725 520 765 760 790 C 1000 815 1180 735 1400 770 C 1500 786 1560 790 1600 782 L1600 1000 L0 1000 Z" fill="#93B8C1"/>
+  <path d="M0 860 C 300 820 560 850 820 870 C 1080 890 1260 820 1600 852 L1600 1000 L0 1000 Z" fill="#6497AA"/>
+  <path d="M0 935 C 320 900 640 925 960 936 C 1200 944 1420 905 1600 920 L1600 1000 L0 1000 Z" fill="#43788F"/>
+</svg>

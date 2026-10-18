@@ -1,0 +1,12 @@
+{
+  "accentColor": "#1f7a5a",
+  "interfaceFontFamily": "New York",
+  "textFontFamily": "New York",
+  "monospaceFontFamily": "JetBrains Mono",
+  "showViewHeader": true,
+  "theme": "system",
+  "cssTheme": "Soft Paper",
+  "enabledCssSnippets": [
+    "vault-style"
+  ]
+}

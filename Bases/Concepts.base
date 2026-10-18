@@ -1,0 +1,31 @@
+filters:
+  and:
+    - type == "concept"
+    - '!file.inFolder("Templates")'
+properties:
+  file.name:
+    displayName: Concept
+  note.courses:
+    displayName: Courses
+  file.mtime:
+    displayName: Edited
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - courses
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Recently edited
+    order:
+      - file.name
+      - courses
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 15
