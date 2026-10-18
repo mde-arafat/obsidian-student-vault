@@ -4,6 +4,20 @@ A calm, ready-to-use [Obsidian](https://obsidian.md) vault for students: courses
 
 Made for **IIT Madras BS** students (Qualifier and Foundation course pages included) and works for **any student** at any university.
 
+![The New tab page: a greeting, today's date and your next deadline over a calm illustration](.github/screenshots/new-tab-light.png)
+
+## Screenshots
+
+**Dark mode**
+
+![New tab page in dark mode, with a crescent moon](.github/screenshots/new-tab-dark.png)
+
+**Home dashboard**
+
+![Home dashboard with rainbow folders, upcoming deadlines and active courses](.github/screenshots/home.png)
+
+*Screenshots show example notes; the template itself starts empty apart from the course pages.*
+
 ## What you get
 
 - **Home dashboard:** what's due next, active courses and projects in one place.
